@@ -1,3 +1,19 @@
 Link para o download do Git:https://git-scm.com/downloads
 O Git Bash é um terminal extendido para otimizar o uso do Git.
+Usando o Git:
+Após criar um repositório no Github e copiar o endereço https://meugithub.com/nomeRepositório.git
+Você deve criar uma pasta na sua máquina local para abrigar os conteúdos do repositório em nuvem e clicar com o botão direito do mouse, selecionando git bash here.
+Abrirá um terminal git e nele digitar o comando para clonar o repositório. Para colar o endereço no terminal ao invés do ctrl+v, deve-se usar Shift+Insert:
+$ git clone https://meugithub.com/nomeRepositório.git
+Para trabalhar dentro do repositório da máquina local:
+$ cd nomeRepositório
+E lá, fazer criação de pastas com seus arquivos organizados ou códigos de um projeto. Após isso, usar o comando add (espaço) . no git para adicionar no controle de versão local:
+$ git add .
+Depois, fazer o commit:
+$ git commit -m "Inclusão de arquivos por exemplo"
+Usar o git status para ver o estado da pasta e o que fazer depois:
+$ git status
+Com isso, vai ser indicado para fazer o git push para enviar os commits para a nuvem do Github:
+$ git push origin main
+
 
