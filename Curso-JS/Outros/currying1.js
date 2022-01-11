@@ -20,8 +20,14 @@ function soma(a) {
 
 const soma2 = soma(2);
 
-soma2(2);
-soma2(3);
-soma2(4);
-soma2(5);
+//soma2(2);
+//soma2(3);
+//soma2(4);
+//soma2(5);
+
+for (let index = 2; index <= 5; index++){
+    const somatorio = soma2(index);
+    console.log(somatorio);
+}
+
 

@@ -20,7 +20,8 @@ const logFnResult = fnParam => console.log(fnParam());
 
 logFnResult(fn);
 
-//Receber e retornar funções. Funções recursivas. Problemas no primeiro arrow, então coloquei para receber o retorno. Função de expressão
+//Receber e retornar funções. Funções recursivas. Problemas no primeiro arrow (const controlFnExec => fnParam => allowed =>),
+//então coloquei para receber o retorno. Função de expressão
 const controlFnExec = fnParam => allowed => {
     if(allowed) {
         fnParam(); 
