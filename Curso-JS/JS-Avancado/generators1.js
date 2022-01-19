@@ -1,4 +1,5 @@
- //Symbol.iterator
+ //O generator se comunica através da interface da iteração
+ //Symbol.iterator;
  const obj = {
     values: [1, 2, 3, 4],
     [Symbol.iterator]() {
@@ -50,3 +51,62 @@ console.log(it2.next());//Hello { value: 1, done: false }
 console.log(it2.next());//from { value: 2, done: false }
 console.log(it2.next());//function { value: undefined, done: true }
 
+//Pode receber valores de fora da função
+function* hello() {
+    console.log('Hello');
+    yield 1;
+    console.log('from');
+    const value = yield 2;
+    console.log(value);
+}
+const it2 = hello();
+console.log(it2.next());
+console.log(it2.next());
+console.log(it2.next('Outside!'));
+/**
+ Hello
+ { value: 1, done: false }
+ from
+ { value: 2, done: false }
+ Outside!
+ { value: undefined, done: true }
+ */
+
+ //O generator é poderoso porque pode controlar a execução até de um loop infinito
+function* naturalNumbers() {
+    let number = 0;
+    while (true) {
+        yield number;
+        number++;
+    }
+}
+const it = naturalNumbers();
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+/**
+ { value: 0, done: false }
+ { value: 1, done: false }
+ { value: 2, done: false }
+ { value: 3, done: false }
+ */
+//Pode utilizar o generator para gerar, construir a interface de iteração dos objetos iteráveis
+const obj = {
+    values: [1, 2, 3, 4],
+    *[Symbol.iterator]() {//colocar o asterisco
+        for (var i = 0; i < this.values.length; i++) {
+            yield this.values[i];
+        }
+    }
+};
+for (let value of obj) {
+    console.log(value);
+}
+/**
+ 1
+ 2
+ 3
+ 4
+ */
+//Usar o generator para construir iteradores, sem o uso do next()
