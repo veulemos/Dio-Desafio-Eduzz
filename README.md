@@ -10,6 +10,9 @@ Práticas das aulas de HTML5 e CSS3
 ## Links Úteis:
 [Otimizar imagens](https://tinypng.com/)
 
+_________________________________________
+_________________________________________
+
 ![Testes](/Curso-JS/img-tdd.png "TDD")
 # Testes
 
